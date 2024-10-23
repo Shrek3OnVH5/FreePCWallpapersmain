@@ -89,11 +89,11 @@
             <img src="images/cat.gif" alt="Welcome GIF">
         </section>
         <div class="welcome-message">
-            Welcome to the net's best wallpaper gallery. All images are in 2560 x 1400 resolution. Click on categories up top to get started!
+            Welcome to the net's best wallpaper gallery. All images are in 2560 x 1440 resolution. Click on categories up top to get started!
         </div>
 
         <!-- Upload Form -->
-        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="/.netlify/functions/upload" method="POST" enctype="multipart/form-data">
             <label for="photo">Upload Photo:</label>
             <input type="file" id="photo" name="photo" accept="image/*" required>
             <button type="submit">Submit Photo</button>
@@ -112,18 +112,18 @@
 
             const formData = new FormData(this);
 
-            fetch('/upload', {
+            fetch('/.netlify/functions/upload', { // Updated to use Netlify function
                 method: 'POST',
                 body: formData,
             })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('responseMessage').innerText = data; // Display the response
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('responseMessage').innerText = 'Upload failed.';
-            });
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('responseMessage').innerText = data.message; // Display the response
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('responseMessage').innerText = 'Upload failed.';
+                });
         });
     </script>
 </body>
