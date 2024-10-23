@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free high-quality wallpapers for your desktop, mobile, and tablet devices.">
+    <title>Free Wallpapers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black; /* Background color for contrast */
+            color: white; /* Text color */
+        }
+
+        header, footer {
+            width: 100%; /* Ensure header and footer stretch across the page */
+        }
+
+        .container {
+            text-align: center; /* Center the text */
+            margin: 20px; /* Add some margin */
+        }
+
+        .welcome-message {
+            font-weight: bold; /* Make the text bold */
+            margin-top: 20px; /* Space above the welcome message */
+        }
+
+        .wallpaper-grid {
+            display: flex;
+            justify-content: center; /* Center align the GIF */
+            margin: 20px 0; /* Space around the grid */
+        }
+
+        img {
+            max-width: 60%; /* Set a maximum width for the GIF */
+            max-height: 70vh; /* Limit height to 70% of the viewport height */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Optional: Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+        }
+
+        form {
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            text-align: center;
+        }
+
+        button {
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #6a11cb;
+            }
+
+        #responseMessage {
+            margin-top: 20px; /* Space for response message */
+            color: #ffdd57; /* Color for success/failure messages */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Free Wallpaper Collection</h1>
+        <nav>
+            <a href="#popular">Popular</a>
+            <a href="categories.html">Categories</a> <!-- Link to the new categories page -->
+            <a href="#new">New Arrivals</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="wallpaper-grid">
+            <img src="images/cat.gif" alt="Welcome GIF">
+        </section>
+        <div class="welcome-message">
+            Welcome to the net's best wallpaper gallery. All images are in 2560 x 1400 resolution. Click on categories up top to get started!
+        </div>
+
+        <!-- Upload Form -->
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="photo">Upload Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+            <button type="submit">Submit Photo</button>
+        </form>
+
+        <div id="responseMessage"></div> <!-- Placeholder for response messages -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Free Wallpapers. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(this);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('responseMessage').innerText = data; // Display the response
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('responseMessage').innerText = 'Upload failed.';
+            });
+        });
+    </script>
+</body>
+</html>
