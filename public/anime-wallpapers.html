@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Wallpapers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .wallpaper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+            gap: 10px;
+        }
+
+        img {
+            width: 100%; /* Make images responsive */
+            height: auto;
+            cursor: pointer; /* Indicate that the image can be clicked */
+            transition: transform 0.2s ease; /* Smooth transition for hover effect */
+        }
+
+            img:hover {
+                transform: scale(1.05); /* Slight zoom effect on hover */
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Anime Wallpapers</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="#new">New Arrivals</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="wallpaper-grid">
+            <a href="anime1.html">
+                <img src="images/anime/anime1.jpg" alt="Anime Wallpaper 1">
+            </a>
+            <a href="anime2.html">
+                <img src="images/anime/anime2.jpg" alt="Anime Wallpaper 2">
+            </a>
+            <a href="anime3.html">
+                <img src="images/anime/anime3.jpg" alt="Anime Wallpaper 3">
+            </a>
+            <a href="anime4.html">
+                <img src="images/anime/anime4.jpg" alt="Anime Wallpaper 4">
+            </a>
+            <a href="anime5.html">
+                <img src="images/anime/anime5.jpg" alt="Anime Wallpaper 5">
+            </a>
+            <a href="anime6.html">
+                <img src="images/anime/anime6.jpg" alt="Anime Wallpaper 6">
+            </a>
+            <a href="anime7.html">
+                <img src="images/anime/anime7.jpg" alt="Anime Wallpaper 7">
+            </a>
+            <a href="anime8.html">
+                <img src="images/anime/anime8.jpg" alt="Anime Wallpaper 8">
+            </a>
+            <!-- Add more images as needed -->
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Free Wallpapers. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

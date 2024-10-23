@@ -1,0 +1,156 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #6a11cb, #2575fc);
+    color: #333; /* Darker text color for readability */
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradient background */
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+/* Navigation Styling */
+nav {
+    margin-top: 15px;
+    font-size: 1.1em;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            background-color: white;
+            color: #2575fc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Wallpaper Grid */
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+    .wallpaper-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+        .wallpaper-grid img:hover {
+            transform: scale(1.05);
+        }
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(180deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+    footer p {
+        margin: 0;
+    }
+
+/* Category Grid */
+.category-grid {
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Adds space between the items */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    margin-top: 20px;
+}
+
+.category-item {
+    text-align: center;
+    width: 300px; /* Control width of the category item */
+}
+
+    .category-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+        .category-item img:hover {
+            transform: scale(1.05);
+        }
+
+    .category-item h2 {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1.5em;
+        color: white; /* Ensure the text color is white */
+    }
+
+    /* Category Links Styling */
+    .category-item a {
+        text-decoration: none !important; /* Remove underline for all links */
+    }
+
+    .category-item h2 a {
+        color: white !important; /* Keep the text white */
+        text-decoration: none !important; /* Ensure no underline */
+        font-size: inherit; /* Use inherited font size */
+        text-transform: uppercase; /* Uppercase text */
+        letter-spacing: 2px; /* Spacing between letters */
+        font-weight: bold; /* Bold text */
+        transition: color 0.3s ease; /* Smooth transition for hover */
+    }
+
+        .category-item h2 a:hover {
+            color: #ffdd57; /* Optional hover color */
+        }
+
+/* Modal Styling */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto; /* Allow the width to adjust */
+    height: auto; /* Allow the height to adjust */
+    max-width: 100%; /* Limit maximum width */
+    max-height: 100%; /* Limit maximum height */
+    position: relative; /* Positioning for zoom */
+}
